@@ -123,6 +123,7 @@ body{
     z-index: 9;
     top: 12vh;
     scrollbar-color: none;
+    border-radius: 10px;
 }
 
 .modal-container ::-webkit-scrollbar{
