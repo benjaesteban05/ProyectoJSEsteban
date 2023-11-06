@@ -27,14 +27,15 @@ body{
     justify-self: start;
     margin-left: 20px;
     color: #fff;
-    margin-top: 4vh;
+    margin-top: 5px;
     cursor: pointer;
 }
 
 .ver-carrito{
     font-size: 25px;
-    margin-top: 3.5vh;
+    margin-top: 10px;
     cursor: pointer;
+    padding-right: 25px;
 }
 
 /* banner */
@@ -167,5 +168,31 @@ body{
     padding-top: 20px;
 }
 
+/* Boton eliminar productos */
+.delete-product {
+    cursor: pointer;
+}
 
+/* Contador */
+.cantidad-carrito{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+.sumar{
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.restar{
+    cursor: pointer;
+    margin-bottom: 15px;
+}
 
