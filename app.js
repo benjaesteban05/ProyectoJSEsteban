@@ -3,6 +3,7 @@ const verCarrito = document.getElementById("verCarrito")
 const modalContainer = document.getElementById("modal-container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 
+<<<<<<< HEAD
 const productos = [
     {
         id: 1,
@@ -90,6 +91,63 @@ productos.forEach((products)=> {
     }
     });
 });
+=======
+const productos = [];
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const getProducts = async () => {
+    const response = await fetch("data.json");
+    const data = await response.json();
+
+
+    data.forEach((products)=> {
+        let content = document.createElement("div")
+        content.className = "productos"
+        content.innerHTML = `
+        <img src="${products.img}">
+        <h3>${products.nombre}</h3>
+        <p class="precio">${products.precio} $</p>
+        `;
+    
+        shopContent.append(content);
+        
+        let comprar = document.createElement("button");
+        comprar.innerText = "comprar"
+        comprar.className = "comprar"
+        
+        content.append(comprar);
+    
+        comprar.addEventListener("click" , () =>{
+        const repeat = carrito.some((repeatProducts) => repeatProducts.id === products.id) 
+        
+        if(repeat){
+            carrito.map((prod) => {
+                if (prod.id == products.id) {
+                    prod.cantidad++;
+                }
+            });
+        } else{
+        carrito.push({
+                id : products.id,
+                img : products.img,
+                nombre : products.nombre,
+                precio : products.precio,
+                cantidad: products.cantidad,
+            });
+            console.log(carrito)
+            console.log(carrito.length)
+            carritoCounter()
+            saveLocal();
+        }
+        });
+    });
+
+};
+
+getProducts();
+
+>>>>>>> 3c74f3d (ProyectoFinalEsteban)
 
 const pintarCarrito = () => {
     modalContainer.innerHTML = "";
